@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.GridPane?>
+
+<GridPane alignment="CENTER" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.william.easyloto.ihm.controller.AddCartonController">
+   <children>
+      <GridPane GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" fx:id="carton">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <TextField fx:id="num00" />
+            <TextField fx:id="num01" GridPane.columnIndex="1" />
+            <TextField fx:id="num02" GridPane.columnIndex="2" />
+            <TextField fx:id="num03" GridPane.columnIndex="3" />
+            <TextField fx:id="num04" GridPane.columnIndex="4" />
+            <TextField fx:id="num10" GridPane.rowIndex="1" />
+            <TextField fx:id="num11" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <TextField fx:id="num12" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+            <TextField fx:id="num13" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+            <TextField fx:id="num14" GridPane.columnIndex="4" GridPane.rowIndex="1" />
+            <TextField fx:id="num20" GridPane.rowIndex="2" />
+            <TextField fx:id="num21" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <TextField fx:id="num22" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+            <TextField fx:id="num23" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+            <TextField fx:id="num24" GridPane.columnIndex="4" GridPane.rowIndex="2" />
+         </children>
+      </GridPane>
+      <TextField fx:id="name" promptText="Nom" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+      <ButtonBar prefHeight="40.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER">
+         <buttons>
+            <Button contentDisplay="CENTER" mnemonicParsing="false" onAction="#Build" text="Créer" />
+            <Button mnemonicParsing="false" onAction="#Cancel" text="Annuler" />
+         </buttons>
+      </ButtonBar>
+   </children>
+   <rowConstraints>
+      <RowConstraints />
+      <RowConstraints percentHeight="20.0" />
+      <RowConstraints percentHeight="50.0" />
+      <RowConstraints percentHeight="30.0" />
+      <RowConstraints />
+   </rowConstraints>
+   <columnConstraints>
+      <ColumnConstraints />
+      <ColumnConstraints percentWidth="10.0" />
+      <ColumnConstraints percentWidth="80.0" />
+      <ColumnConstraints percentWidth="10.0" />
+      <ColumnConstraints />
+   </columnConstraints>
+</GridPane>
