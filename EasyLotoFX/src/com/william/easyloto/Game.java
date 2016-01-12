@@ -18,6 +18,10 @@ public class Game
 	private static Game instance;
 	private IGameMode game_mode;
 	
+	public static final int GAMEMODE_QUINE = 1;
+	public static final int GAMEMODE_DOUBLEQUINE = 2;
+	public static final int GAMEMODE_CARTONPLEIN = 3;
+	
 	private Game()
 	{
 		this.cartons = new ArrayList<>();
@@ -94,9 +98,26 @@ public class Game
 		return this.game_mode.toString();
 	}
 	
-	public void setGameMode(IGameMode mode)
+	public void setGameMode(int mode)
 	{
-		this.game_mode = mode;
+		if(mode == 1)
+			this.game_mode = new GameQuine();
+		else if(mode == 2)
+			this.game_mode = new GameDoubleQuine();
+		else if(mode == 3)
+			this.game_mode = new GameCartonPlein();
+	}
+	
+	public String NextGameMode()
+	{
+		if(this.game_mode.getClass().equals(GameQuine.class))
+			this.game_mode = new GameDoubleQuine();
+		else if(this.game_mode.getClass().equals(GameDoubleQuine.class))
+			this.game_mode = new GameCartonPlein();
+		else
+			this.game_mode = new GameQuine();
+		
+		return this.getGameMode();
 	}
 	
 	public boolean TestNumber(int num)
@@ -112,29 +133,5 @@ public class Game
 			this.game_mode = new GameCartonPlein();
 		
 		return win;
-	}
-	
-	public void insertStub()
-	{
-		Carton c = new Carton("Carton 1");
-		c.AddNum(13, 0);
-		c.AddNum(32, 0);
-		c.AddNum(50, 0);
-		c.AddNum(62, 0);
-		c.AddNum(80, 0);
-		
-		c.AddNum(6, 1);
-		c.AddNum(26, 1);
-		c.AddNum(39, 1);
-		c.AddNum(57, 1);
-		c.AddNum(70, 1);
-		
-		c.AddNum(16, 2);
-		c.AddNum(23, 2);
-		c.AddNum(43, 2);
-		c.AddNum(64, 2);
-		c.AddNum(87, 2);
-		
-		this.cartons.add(c);
 	}
 }

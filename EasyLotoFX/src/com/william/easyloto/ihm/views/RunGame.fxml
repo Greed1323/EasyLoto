@@ -1,8 +1,58 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.GridPane?>
 
-<GridPane xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.william.easyloto.ihm.controller.RunGameController">
-	<!-- TODO Add Nodes -->
-</GridPane>
 
+<GridPane xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.40" fx:controller="com.william.easyloto.ihm.controller.RunGameController">
+   <children>
+      <ListView fx:id="listCarton" GridPane.columnIndex="1" GridPane.rowIndex="1">
+         <GridPane.margin>
+            <Insets right="10.0" top="10.0" />
+         </GridPane.margin>
+      </ListView>
+      <Button mnemonicParsing="false" text="Retour" GridPane.columnIndex="1" onAction="#goHome" />
+      <VBox alignment="TOP_CENTER" GridPane.columnIndex="2" GridPane.rowIndex="1">
+         <children>
+            <ButtonBar>
+              <buttons>
+                  <ComboBox fx:id="comboMode" prefWidth="150.0" />
+                <Button mnemonicParsing="false" onAction="#Start" text="Commencer" />
+              </buttons>
+               <VBox.margin>
+                  <Insets bottom="10.0" />
+               </VBox.margin>
+            </ButtonBar>
+            <Separator prefWidth="200.0" />
+            <TextField fx:id="txtNum" maxWidth="40.0" minWidth="40.0" onKeyReleased="#AddNum" prefWidth="40.0" VBox.vgrow="NEVER">
+               <VBox.margin>
+                  <Insets bottom="20.0" top="20.0" />
+               </VBox.margin>
+            </TextField>
+            <Separator prefWidth="200.0" />
+          <Button mnemonicParsing="false" onAction="#NextMode" text="Passer au mode suivant">
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+            </Button>
+         </children>
+         <padding>
+            <Insets right="10.0" />
+         </padding>
+      </VBox>
+      <Label fx:id="txtMode" text="GameMode" GridPane.columnIndex="1" GridPane.halignment="CENTER" />
+   </children>
+   <columnConstraints>
+      <ColumnConstraints percentWidth="2.0" />
+      <ColumnConstraints percentWidth="65.0" />
+      <ColumnConstraints percentWidth="33.0" />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints percentHeight="10.0" />
+      <RowConstraints percentHeight="80.0" />
+      <RowConstraints percentHeight="10.0" />
+   </rowConstraints>
+</GridPane>

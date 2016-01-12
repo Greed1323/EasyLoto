@@ -47,6 +47,12 @@ public class GameQuine implements IGameMode
 		
 		return null;
 	}
+	
+	@Override
+	public String toString()
+	{
+		return "Quine";
+	}
 }
 
 

@@ -57,12 +57,19 @@ public class CartonIHM implements ICarton
 		return this.carton;
 	}
 	
-	private Node getNode(int col, int row)
+	private Node getNode(int col, int row, Class<?> clazz)
 	{
 		for(int i = 0; i < this.box.getChildren().size(); i++)
-			if(GridPane.getColumnIndex(this.box.getChildren().get(i)) == col && GridPane.getColumnIndex(this.box.getChildren().get(i)) == row)
+		{
+			if(this.box.getChildren().get(i).getClass().equals(clazz))
+				System.out.println(GridPane.getColumnIndex(this.box.getChildren().get(i)) + " " + GridPane.getRowIndex(this.box.getChildren().get(i)));
+			
+			if(this.box.getChildren().get(i).getClass().equals(clazz) && GridPane.getColumnIndex(this.box.getChildren().get(i)) == col 
+					&& GridPane.getRowIndex(this.box.getChildren().get(i)) == row)
+			{
 				return this.box.getChildren().get(i);
-		
+			}
+		}
 		return null;
 	}
 	
@@ -95,7 +102,7 @@ public class CartonIHM implements ICarton
 		Pair<Integer, Integer> pos = this.carton.indexOfNumber(this.carton.searchNum(num));
 		
 		if(pos != null)
-			this.getNode(pos.getA(), pos.getB()).setStyle("-fx-background-color: green; -fx-font-weight: bold;");
+			this.getNode(pos.getB(), pos.getA()+1, Label.class).setStyle("-fx-background-color: green; -fx-font-weight: bold;");
 	}
 
 	@Override
@@ -109,9 +116,9 @@ public class CartonIHM implements ICarton
 	{
 		this.carton.CheckNum(num);
 		Pair<Integer, Integer> pos = this.carton.indexOfNumber(this.carton.searchNum(num));
-		
+		System.out.println(pos);
 		if(pos != null)
-			this.getNode(pos.getA(), pos.getB()).setStyle("-fx-background-color: green; -fx-font-weight: bold;");
+			this.getNode(pos.getB(), pos.getA()+1, Label.class).setStyle("-fx-background-color: green; -fx-font-weight: bold;");
 	}
 	
 	@Override

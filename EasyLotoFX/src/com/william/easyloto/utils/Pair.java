@@ -30,4 +30,10 @@ public class Pair<A, B>
 	{
 		this.b = b;
 	}
+	
+	@Override
+	public String toString()
+	{
+		return "A: " + a + "/ B: " + b;
+	}
 }

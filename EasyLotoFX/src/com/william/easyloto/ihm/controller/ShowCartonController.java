@@ -89,9 +89,9 @@ public class ShowCartonController implements Initializable
 	}
 	
 	@FXML
-	public void goHome()
+	public void goPlay()
 	{
-		ViewManager.loadView(ViewManager.MENU);
+		ViewManager.loadView(ViewManager.RUNGAME);
 	}
 	
 	@FXML

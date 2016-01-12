@@ -48,4 +48,10 @@ public class GameCartonPlein implements IGameMode
 		
 		return null;
 	}
+	
+	@Override
+	public String toString()
+	{
+		return "Carton plein";
+	}
 }

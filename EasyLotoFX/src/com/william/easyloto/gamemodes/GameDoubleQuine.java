@@ -80,6 +80,12 @@ public class GameDoubleQuine implements IGameMode
 		
 		return null;
 	}
+	
+	@Override
+	public String toString()
+	{
+		return "Double quine";
+	}
 }
 
 

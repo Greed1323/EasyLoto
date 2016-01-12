@@ -40,7 +40,7 @@ public class Main extends Application
 			MainController mainController = loader.getController();
 
 	        ViewManager.setMainController(mainController);
-	        ViewManager.loadView(ViewManager.MENU);
+	        ViewManager.loadView(ViewManager.SHOWCARTON);
 
 	        return mainPane;
 		}

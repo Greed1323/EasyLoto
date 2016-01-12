@@ -8,18 +8,14 @@
 
 <GridPane xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.william.easyloto.ihm.controller.ShowCartonController">
    <children>
-      <Button mnemonicParsing="false" onAction="#goHome" text="Retour" GridPane.columnIndex="1">
-         <GridPane.margin>
-            <Insets top="10.0" />
-         </GridPane.margin></Button>
-      <ListView fx:id="listCarton" prefHeight="200.0" prefWidth="500.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+      <ListView fx:id="listCarton" GridPane.columnIndex="1" GridPane.rowIndex="1">
          <GridPane.margin>
             <Insets right="15.0" top="15.0" />
          </GridPane.margin></ListView>
-      <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" spacing="10.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
+      <VBox alignment="TOP_CENTER" spacing="10.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
          <children>
             <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#goCreateCarton" text="Créer un carton" textAlignment="CENTER" />
-            <HBox prefHeight="33.0" prefWidth="196.0">
+            <HBox>
                <children>
                   <ComboBox fx:id="combo_carton" prefWidth="150.0" />
                   <Button mnemonicParsing="false" onAction="#DeleteCarton" text="Supprimer" />
@@ -31,6 +27,7 @@
             <Button mnemonicParsing="false" onAction="#Save" text="Sauvegarder" />
             <Button mnemonicParsing="false" onAction="#Load" text="Charger" />
             <Separator prefWidth="200.0" />
+            <Button mnemonicParsing="false" onAction="#goPlay" text="Jouer" />
          </children>
          <GridPane.margin>
             <Insets right="10.0" top="15.0" />
@@ -40,7 +37,7 @@
    <columnConstraints>
       <ColumnConstraints percentWidth="2.0" />
       <ColumnConstraints percentWidth="65.0" />
-      <ColumnConstraints minWidth="10.0" percentWidth="33.0" prefWidth="100.0" />
+      <ColumnConstraints percentWidth="33.0" />
    </columnConstraints>
    <rowConstraints>
       <RowConstraints percentHeight="10.0" />
