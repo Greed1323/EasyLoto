@@ -1,8 +1,6 @@
 package com.william.easyloto.ihm.controller;
 
 import java.net.URL;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.ResourceBundle;
 
 import com.william.easyloto.Carton;
@@ -46,8 +44,6 @@ public class RunGameController implements Initializable
 	@FXML
 	private Label txtMode;
 	
-	private List<Integer> listNum;
-	
 	@Override
 	public void initialize(URL location, ResourceBundle resources)
 	{
@@ -78,8 +74,6 @@ public class RunGameController implements Initializable
         });
 		
 		this.InitCartons();
-		
-		this.listNum = new ArrayList<>();
 	}
 	
 	@FXML
@@ -106,7 +100,6 @@ public class RunGameController implements Initializable
 	{
 		if(event.getCode() == KeyCode.ENTER && !this.txtNum.getText().equals(""))
 		{
-			this.listNum.add(0);
 			int num = Integer.valueOf(this.txtNum.getText());
 			
 			for(CartonIHM carton: this.ocartons)
