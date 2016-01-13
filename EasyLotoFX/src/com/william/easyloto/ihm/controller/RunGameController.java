@@ -21,10 +21,17 @@ import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
+import javafx.scene.text.Text;
 import javafx.util.Callback;
 
 public class RunGameController implements Initializable
 {
+	@FXML
+	private Text txtMessage;
+	
+	@FXML
+	private Text txtListNum;
+	
 	@FXML
 	private ListView<CartonIHM> listCarton;
 	private ObservableList<CartonIHM> ocartons;
@@ -105,12 +112,9 @@ public class RunGameController implements Initializable
 			for(CartonIHM carton: this.ocartons)
 				carton.CheckNum(num);
 			
-			if(Game.getInstance().TestNumber(num))
-			{
-				System.out.println("WIN");
-				this.NextMode();
-			}
-			
+			this.txtListNum.setText(num + "; " + this.txtListNum.getText()); 
+			this.txtMessage.setText(Game.getInstance().TestNumber(num));
+			this.txtMode.setText(Game.getInstance().getGameMode());
 			this.txtNum.setText("");
 		}
 	}
@@ -132,5 +136,7 @@ public class RunGameController implements Initializable
 	{
 		for(CartonIHM carton: this.ocartons)
 			carton.UnckeckAll();
+		
+		this.txtListNum.setText("");
 	}
 }

@@ -13,30 +13,23 @@ public class GameCartonPlein implements IGameMode
 	}
 	
 	@Override
-	public boolean HasWin(Carton carton)
+	public String HasWin(Carton carton)
 	{
 		List<List<Numero>> nums = carton.getNumeros();
 		
 		int count_check = 0;
 		
 		for(int i = 0; i < nums.size(); i++)
-		{
 			for(Numero n: nums.get(i))
-			{
 				if(n.isChecked())
 					count_check++;
-			}
-		}
 		
 		if(count_check == 15)
-		{
-			System.out.println("CARTON PLEIN sur le carton" + carton.getName() + " !!");
-			return true;
-		}
+			return "win CARTON PLEIN sur le carton" + carton.getName() + " !!";
 		else if(count_check == 14)
-			System.out.println("Il manque le numero " + this.SearchLast(nums).getNum() + " avant le CARTON PLEIN sur le carton " + carton.getName() + " !!");
+			return "Il manque le numero " + this.SearchLast(nums).getNum() + " avant le CARTON PLEIN sur le carton " + carton.getName() + " !!";
 		
-		return false;
+		return "";
 	}
 	
 	private Numero SearchLast(List<List<Numero>> nums)

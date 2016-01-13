@@ -14,7 +14,7 @@ public class GameDoubleQuine implements IGameMode
 	}
 	
 	@Override
-	public boolean HasWin(Carton carton)
+	public String HasWin(Carton carton)
 	{
 		List<List<Numero>> nums = carton.getNumeros();
 		
@@ -26,10 +26,8 @@ public class GameDoubleQuine implements IGameMode
 			int count_check = 0;
 			
 			for(Numero n: nums.get(i))
-			{
 				if(n.isChecked())
 					count_check++;
-			}
 			
 			if(count_check == 5)
 			{
@@ -38,10 +36,7 @@ public class GameDoubleQuine implements IGameMode
 			}
 			
 			if(count_line == 2)
-			{
-				System.out.println("Double QUINE !! Carton " + carton.getName() + " ligne " + line_winning.get(0) + " et " + line_winning.get(1));
-				return true;
-			}
+				return "win Double QUINE !! Carton " + carton.getName() + " ligne " + line_winning.get(0) + " et " + line_winning.get(1);
 		}
 		
 		if(count_line == 1)
@@ -49,10 +44,10 @@ public class GameDoubleQuine implements IGameMode
 			int res = this.FindLineLast(nums);
 			
 			if(res != 0)
-				System.out.println("Il manque le numero " + this.SearchLast(nums.get(res)).getNum() + " avant la DOUBLE QUINE sur le carton " + carton.getName());
+				return "Il manque le numero " + this.SearchLast(nums.get(res)).getNum() + " avant la DOUBLE QUINE sur le carton " + carton.getName();
 		}
 		
-		return false;
+		return "";
 	}
 	
 	private int FindLineLast(List<List<Numero>> nums)

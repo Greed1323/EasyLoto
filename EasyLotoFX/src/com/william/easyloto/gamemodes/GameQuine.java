@@ -13,7 +13,7 @@ public class GameQuine implements IGameMode
 	}
 	
 	@Override
-	public boolean HasWin(Carton carton)
+	public String HasWin(Carton carton)
 	{
 		List<List<Numero>> nums = carton.getNumeros();
 		
@@ -22,21 +22,16 @@ public class GameQuine implements IGameMode
 			int count_check = 0;
 			
 			for(Numero n: nums.get(i))
-			{
 				if(n.isChecked())
 					count_check++;
-			}
 			
 			if(count_check == 5)
-			{
-				System.out.println("QUINE !! Carton " + carton.getName() + " ligne " + (i+1));
-				return true;
-			}
+				return "win QUINE !! Carton " + carton.getName() + " ligne " + (i+1);
 			if(count_check == 4)
-				System.out.println("Il manque le numero " + this.searchLast(nums.get(i)).getNum() + " sur le carton " + carton.getName() + " ligne " + (i+1));
+				return "Il manque le numero " + this.searchLast(nums.get(i)).getNum() + " sur le carton " + carton.getName() + " ligne " + (i+1);
 		}
 		
-		return false;
+		return "";
 	}
 	
 	private Numero searchLast(List<Numero> nums)

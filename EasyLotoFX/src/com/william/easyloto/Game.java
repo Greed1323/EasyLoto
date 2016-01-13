@@ -120,18 +120,16 @@ public class Game
 		return this.getGameMode();
 	}
 	
-	public boolean TestNumber(int num)
+	public String TestNumber(int num)
 	{
-		boolean win = false;
+		StringBuilder win = new StringBuilder();
 		
 		for(Carton c: this.cartons)
-			win = this.game_mode.HasWin(c);
+			win.append(this.game_mode.HasWin(c) + "\n");
 		
-		if(win  && this.game_mode.getClass().equals(GameQuine.class))
-			this.game_mode = new GameDoubleQuine();
-		else if(win && this.game_mode.getClass().equals(GameDoubleQuine.class))
-			this.game_mode = new GameCartonPlein();
+		if(win.toString().contains("win"))
+			this.NextGameMode();
 		
-		return win;
+		return win.toString();
 	}
 }

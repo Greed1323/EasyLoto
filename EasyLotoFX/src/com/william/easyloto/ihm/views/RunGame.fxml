@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.text.*?>
 <?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.GridPane?>
 
-
-<GridPane xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.40" fx:controller="com.william.easyloto.ihm.controller.RunGameController">
+<GridPane xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.william.easyloto.ihm.controller.RunGameController">
    <children>
       <ListView fx:id="listCarton" GridPane.columnIndex="1" GridPane.rowIndex="1">
          <GridPane.margin>
             <Insets right="10.0" top="10.0" />
          </GridPane.margin>
       </ListView>
-      <Button mnemonicParsing="false" text="Retour" GridPane.columnIndex="1" onAction="#goHome" />
+      <Button mnemonicParsing="false" onAction="#goHome" text="Retour" GridPane.columnIndex="1" />
       <VBox alignment="TOP_CENTER" GridPane.columnIndex="2" GridPane.rowIndex="1">
          <children>
             <ButtonBar>
@@ -32,6 +32,7 @@
                   <Insets bottom="20.0" top="20.0" />
                </VBox.margin>
             </TextField>
+            <Text fx:id="txtMessage" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="250.0" VBox.vgrow="NEVER" />
             <Separator prefWidth="200.0" />
           <Button mnemonicParsing="false" onAction="#NextMode" text="Passer au mode suivant">
                <VBox.margin>
@@ -44,6 +45,7 @@
          </padding>
       </VBox>
       <Label fx:id="txtMode" text="GameMode" GridPane.columnIndex="1" GridPane.halignment="CENTER" />
+      <Text fx:id="txtListNum" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="556.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
    </children>
    <columnConstraints>
       <ColumnConstraints percentWidth="2.0" />

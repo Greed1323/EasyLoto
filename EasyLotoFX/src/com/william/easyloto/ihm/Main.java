@@ -23,7 +23,7 @@ public class Main extends Application
 	
 	private Scene CreateScene(GridPane pane)
 	{
-		Scene scene = new Scene(pane, 800, 500);
+		Scene scene = new Scene(pane, 1000, 600);
 		scene.getStylesheets().add(getClass().getResource("views/application.css").toExternalForm());
 		
 		return scene;
