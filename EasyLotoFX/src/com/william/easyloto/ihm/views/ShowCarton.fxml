@@ -17,7 +17,7 @@
             <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#goCreateCarton" text="Créer un carton" textAlignment="CENTER" />
             <HBox>
                <children>
-                  <ComboBox fx:id="combo_carton" prefWidth="150.0" />
+                  <ComboBox fx:id="comboCarton" prefWidth="150.0" />
                   <Button mnemonicParsing="false" onAction="#DeleteCarton" text="Supprimer" />
                </children>
             </HBox>

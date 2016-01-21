@@ -1,10 +1,10 @@
 package com.william.easyloto.ihm;
 
 import java.io.IOException;
-
 import com.william.easyloto.ihm.controller.MainController;
 
 import javafx.fxml.FXMLLoader;
+import javafx.scene.layout.GridPane;
 
 public class ViewManager
 {
@@ -24,13 +24,29 @@ public class ViewManager
 	public static void loadView(String view)
 	{
 		try {
-			controller.setVista(FXMLLoader.load(ViewManager.class.getResource(view)));
+			controller.setVista(FXMLLoader.load(Main.class.getResource(view)));
         }
 		catch(IOException e)
 		{
+			System.out.println("Not find");
             e.printStackTrace();
         }
     }
+	
+	public static GridPane loadPane(String path)
+	{
+		GridPane grid = new GridPane();
+		try
+		{
+			grid = (GridPane) FXMLLoader.load(Main.class.getResource(path));
+			return grid;
+		}
+		catch(Exception e)
+		{
+			e.printStackTrace();
+			return null;
+		}
+	}
 }
 
 

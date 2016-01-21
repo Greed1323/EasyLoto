@@ -38,7 +38,6 @@ public class AddCartonController implements Initializable
 		}
 		
 		Game.getInstance().AddCarton(c);
-		
 		ViewManager.loadView(ViewManager.SHOWCARTON);
 	}
 	

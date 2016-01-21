@@ -7,6 +7,7 @@ import java.util.List;
 
 import com.william.easyloto.gamemodes.GameCartonPlein;
 import com.william.easyloto.gamemodes.GameDoubleQuine;
+import com.william.easyloto.gamemodes.GameNoMode;
 import com.william.easyloto.gamemodes.GameQuine;
 import com.william.easyloto.gamemodes.IGameMode;
 import com.william.easyloto.utils.LoadWrite;
@@ -25,7 +26,7 @@ public class Game
 	private Game()
 	{
 		this.cartons = new ArrayList<>();
-		this.game_mode = new GameQuine();
+		this.game_mode = new GameNoMode();
 	}
 	
 	public static Game getInstance()
@@ -115,7 +116,7 @@ public class Game
 		else if(this.game_mode.getClass().equals(GameDoubleQuine.class))
 			this.game_mode = new GameCartonPlein();
 		else
-			this.game_mode = new GameQuine();
+			this.game_mode = new GameNoMode();
 		
 		return this.getGameMode();
 	}

@@ -4,5 +4,5 @@
     <application name="EasyLotoFX" mainclass="com.william.easyloto.ihm.Main" version="1.0"/>
     <info title="EasyLoto" vendor="William Groc"/>
   </deploy>
-  <signjar/>
+  <signjar alias="signFiles" keypass="Azerty12345@" keystore="/home/greed/EasyLotoStore" storepass="Azerty12345@"/>
 </anttasks:AntTask>

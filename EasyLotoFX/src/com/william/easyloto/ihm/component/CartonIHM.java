@@ -1,14 +1,13 @@
 package com.william.easyloto.ihm.component;
 
-import java.io.IOException;
 import java.util.List;
 
 import com.william.easyloto.Carton;
 import com.william.easyloto.ICarton;
 import com.william.easyloto.Numero;
+import com.william.easyloto.ihm.ViewManager;
 import com.william.easyloto.utils.Pair;
 
-import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.control.Label;
 import javafx.scene.layout.GridPane;
@@ -26,18 +25,9 @@ public class CartonIHM implements ICarton
 	
 	public void Init()
 	{
-		FXMLLoader loader = new FXMLLoader();
+		this.box = ViewManager.loadPane("./views/Carton.fxml");
 		
-		try
-		{
-			this.box = (GridPane) loader.load(getClass().getResourceAsStream("../views/Carton.fxml"));
-		}
-		catch (IOException e)
-		{
-			e.printStackTrace();
-		}
-		
-		for(int i = 0; i < box.getChildren().size(); i++)
+		for(int i = 0; i < this.box.getChildren().size(); i++)
 		{
 			if(this.box.getChildren().get(i) instanceof Label && this.box.getChildren().get(i).getId() != null && this.box.getChildren().get(i).getId().equals("name"))
 			{

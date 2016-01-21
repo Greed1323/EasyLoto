@@ -24,7 +24,7 @@ public class ShowCartonController implements Initializable
 	private TextField save_name;
 	
 	@FXML
-	private ComboBox<String> combo_carton;
+	private ComboBox<String> comboCarton;
 	private ObservableList<String> oname;
 	
 	@FXML
@@ -37,7 +37,7 @@ public class ShowCartonController implements Initializable
 		this.ocartons = FXCollections.observableArrayList();
 		this.oname = FXCollections.observableArrayList(Game.getInstance().getCartonsName());
 		
-		this.combo_carton.setItems(this.oname);
+		this.comboCarton.setItems(this.oname);
 		
 		this.listCarton.setItems(this.ocartons);
 		this.listCarton.setCellFactory(new Callback<ListView<CartonIHM>, ListCell<CartonIHM>>()
@@ -98,11 +98,11 @@ public class ShowCartonController implements Initializable
 	public void DeleteCarton()
 	{
 		for(int i = 0; i < this.ocartons.size(); i++)
-			if(this.combo_carton.getValue().equals(this.ocartons.get(i).getName()))
+			if(this.comboCarton.getValue().equals(this.ocartons.get(i).getName()))
 			{
 				Game.getInstance().DeleteCarton(this.ocartons.get(i).getCarton());
 				this.ocartons.remove(i);
-				this.oname.remove(this.combo_carton.getValue());
+				this.oname.remove(this.comboCarton.getValue());
 				break;
 			}
 	}

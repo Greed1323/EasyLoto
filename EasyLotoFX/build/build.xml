@@ -109,6 +109,17 @@
 			</manifest>
 		</fx:jar>
 	
+		<!-- Need to use ${basedir} because somehow the ant task is calculating the directory differently -->
+		<fx:signjar
+			keystore="/home/greed/EasyLotoStore"
+			alias="signFiles"
+			keypass="Azerty12345@"
+			storepass="Azerty12345@"
+			destDir="${basedir}/dist">
+			<fileset dir='dist'>
+				<include name='**/*.jar' />
+			</fileset>
+		</fx:signjar>
 	
 	
 	
