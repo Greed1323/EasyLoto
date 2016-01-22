@@ -25,7 +25,7 @@ public class CartonIHM implements ICarton
 	
 	public void Init()
 	{
-		this.box = ViewManager.loadPane("./views/Carton.fxml");
+		this.box = ViewManager.loadPane("views/Carton.fxml");
 		
 		for(int i = 0; i < this.box.getChildren().size(); i++)
 		{
